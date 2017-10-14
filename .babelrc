@@ -1,0 +1,16 @@
+{
+  "env": {
+    "test": {
+      "presets": ["@ava/stage-4"],
+      "plugins": ["istanbul"]
+    },
+    "build": {
+      "presets": [
+        ["env", {
+          "targets": { "browsers": "> 1%" },
+          "modules": false
+        }]
+      ]
+    }
+  }
+}

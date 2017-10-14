@@ -1,0 +1,6 @@
+{
+  "extends": "ngryman",
+  "rules": {
+    "yoda": "off"
+  }
+}
