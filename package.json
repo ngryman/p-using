@@ -1,6 +1,6 @@
 {
   "name": "p-using",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dispose a resource when p-using resolves.",
   "author": "Nicolas Gryman <ngryman@gmail.com> (http://ngryman.sh/)",
   "license": "MIT",
