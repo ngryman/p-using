@@ -40,3 +40,12 @@ test('accept a custom dispose function', async t => {
   t.true(dispose.calledOn(disposable))
   t.true(cb.calledWith(disposable))
 })
+
+test('accept a promise as resource', async t => {
+  const cb = spy()
+  const disposablePromise = Promise.resolve(createDisposable())
+  await using(disposablePromise, cb)
+  const disposable = await disposablePromise
+  t.true(disposable.dispose.calledOn(disposable))
+  t.true(cb.calledWith(disposable))
+})

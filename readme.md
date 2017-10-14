@@ -45,7 +45,7 @@ using(db, () => { db.query('...') }, db => { db.finalize() })
 
 **Parameters**
 
--   `resource` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Resource to be disposed.
+-   `resource` **([Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) \| [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise))** Resource to be disposed.
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** Function to be invoked before disposal.
 -   `disposeFunction` **([String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function))** Name of the method or function called for disposal. (optional, default `'dispose'`)
 
