@@ -11,5 +11,5 @@ notifications:
   email: false
 node_js:
   - 'node'
-  - 'lts'
+  - 'lts/*'
 after_success: npm run coverage
