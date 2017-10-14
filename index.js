@@ -16,8 +16,8 @@ const dispose = (disposeFunction) => (resource) => (
  * @param {String|Function} disposeFunction Name of the method or function called for disposal.
  * @return {Promise} Promise resolved when the resource has been disposed.
  */
-export default function using(resource, callback, disposeFunction = 'dispose') {
+export default function using(resource, callback, disposeFunction) {
   return Promise.resolve(resource)
     .then(invoke(callback))
-    .then(dispose(disposeFunction))
+    .then(dispose(disposeFunction || 'dispose'))
 }
