@@ -1,16 +1,21 @@
 /**
- * 
  * @param {Object} resource Resource to be disposed.
  * @param {Function} callback Function to be invoked before disposal.
  * @param {String|Function} disposeFunction Name of the method or function called for disposal.
+ * @return {Promise} Promise resolved when the resource has been disposed.
  */
-export default async function using(resource, callback, disposeFunction = 'dispose') {
-  await callback()
+export default function using(resource, callback, disposeFunction = 'dispose') {
+  function callDispose() {
+    if (typeof disposeFunction === 'string') {
+      disposeFunction = resource[disposeFunction]
+    }
+    return Promise.resolve().then(disposeFunction.bind(resource))
+  }
 
-  if (typeof disposeFunction === 'string') {
-    await resource[disposeFunction]()
+  const ret = callback()
+
+  if (ret && ret.then) {
+    return ret.then(callDispose)
   }
-  else {
-    await disposeFunction.call(resource)
-  }
+  return callDispose()
 }
