@@ -12,7 +12,7 @@ export default function using(resource, callback, disposeFunction = 'dispose') {
     return Promise.resolve().then(disposeFunction.bind(resource))
   }
 
-  const ret = callback()
+  const ret = callback(resource)
 
   if (ret && ret.then) {
     return ret.then(callDispose)

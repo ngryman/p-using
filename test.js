@@ -12,7 +12,7 @@ test('call the callback', async t => {
   const disposable = createDisposable()
   await using(disposable, cb)
   t.true(disposable.dispose.calledOn(disposable))
-  t.true(cb.called)
+  t.true(cb.calledWith(disposable))
 })
 
 test('accept an async callback', async t => {
@@ -29,7 +29,7 @@ test('accept a custom dispose method name', async t => {
   const disposable = createDisposable('close')
   await using(disposable, cb, 'close')
   t.true(disposable.close.calledOn(disposable))
-  t.true(cb.called)
+  t.true(cb.calledWith(disposable))
 })
 
 test('accept a custom dispose function', async t => {
@@ -38,5 +38,5 @@ test('accept a custom dispose function', async t => {
   const disposable = {}
   await using(disposable, cb, dispose)
   t.true(dispose.calledOn(disposable))
-  t.true(cb.called)
+  t.true(cb.calledWith(disposable))
 })
