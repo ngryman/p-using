@@ -28,13 +28,16 @@ $ npm install --save p-using
 import using from 'p-using'
 
 // call `db.dispose` method
-using(db, () => { db.query('...') })
+using(db, db => { db.query('...') })
 
 // call `db.close` method
-using(db, () => { db.query('...') }, 'close')
+using(db, db => { db.query('...') }, 'close')
 
 // call the provided dispose function
-using(db, () => { db.query('...') }, db => { db.finalize() })
+using(db, db => { db.query('...') }, db => { db.finalize() })
+
+// accept a resource promise
+using(createDb(), db => { db.query('...') })
 ```
 
 ## API
