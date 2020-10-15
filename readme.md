@@ -1,5 +1,7 @@
 # p-using [![travis][travis-image]][travis-url] [![codecov][codecov-image]][codecov-url] [![size][size-image]][size-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ngryman/p-using.svg)](https://greenkeeper.io/)
+
 > Dispose a resource when p-using resolves.
 
 [travis-image]: https://img.shields.io/travis/ngryman/p-using.svg?style=flat
