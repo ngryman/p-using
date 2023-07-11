@@ -14,7 +14,7 @@
 
 [size-url]: https://unpkg.com/p-using@1.0.0/dist/p-using.min.js
 
-Inspired from [Bluebird](http://bluebirdjs.com/docs/api/promise.using.html), `p-using` makes sure that the specifed `dispose` function is called on a `resource`.
+Inspired from [Bluebird](http://bluebirdjs.com/docs/api/promise.using.html), `p-using` makes sure that the specified `dispose` function is called on a `resource`.
 
 ## Installation
 
